@@ -1,4 +1,4 @@
-package AccessorMutator;
+package beginnner.AccessorMutator;
 
 public class Bank{
   private CheckingAccount accountOne;
