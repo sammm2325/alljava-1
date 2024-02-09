@@ -13,7 +13,6 @@ public class Car4 implements Serializable {
   private int year;
   private Engine engine;
   private static final long serialVersionUID = 1L;
-
   
   public Car4(String make, int year) {
     this.make = make;

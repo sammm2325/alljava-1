@@ -31,6 +31,11 @@ public class Car1 implements Serializable {
   private int year;
   private static final long serialVersionUID = 1L;
 
+  public Car1(String make, int year) {
+    this.make = make;
+    this.year = year;
+  }
+
   public static void main(String[] args) throws FileNotFoundException, IOException {
     Car1 toyota = new Car1("Toyota",2021);
     Car1 honda = new Car1("Honda",2020);
