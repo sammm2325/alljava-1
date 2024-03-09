@@ -6,7 +6,6 @@ import java.util.List;
 public class FortuneTeller {
 
   public static void main(String[] args) {
-
     List<Question> questions = Arrays.asList(
         new Question(Question.Difficulty.EASY, "Am I a good coder?"),
         new Question(Question.Difficulty.MEDIUM, "Will I be able to finish this course?"),
@@ -18,10 +17,11 @@ public class FortuneTeller {
         new Question(Question.Difficulty.MEDIUM, "Will I be rich one day?"),
         new Question(Question.Difficulty.MEDIUM, "Should I clean my room?")
     );
-
-    questions.stream().forEach(q -> {
-      CrystalBall c = new CrystalBall(q);
-      c.start();
+     CrystalBall c = new CrystalBall();
+     questions.stream().forEach(q-> {
+      new Thread ( ()-> {
+        c.ask(q);
+      }).start();
     });
   }
 }

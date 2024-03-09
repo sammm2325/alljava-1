@@ -1,29 +1,24 @@
-package intermediate.Threading.Implementing_the_Runnable_Interface;
+package intermediate.Threading.Supervising_a_thread;
 
 import java.util.Random;
 
 public class CrystalBall {
 
-  /* Instance Variables */
-
-  /* Constructors */
-
   /* Instance Methods */
-
   public void ask(Question question) {
-    System.out.println("Good question! You asked: " + question.getQuestion());
+    System.out.println(Thread.currentThread().getName() + " - Good question! You asked: " + question.getQuestion());
     this.think(question);
-    System.out.println("Answer: " + this.answer());
+    System.out.println(Thread.currentThread().getName() + " - Answer: " + this.answer());
   }
 
   private void think(Question question) {
-    System.out.println("Hmm... Thinking");
+    System.out.println(Thread.currentThread().getName() + " - Hmm... Thinking");
     try {
       Thread.sleep(this.getSleepTimeInMs(question.getDifficulty()));
     } catch (Exception e) {
       System.out.println(e);
     }
-    System.out.println("Done!");
+    System.out.println(Thread.currentThread().getName() + " - Done!");
   }
 
   private String answer() {
